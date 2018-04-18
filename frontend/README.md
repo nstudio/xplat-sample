@@ -1,6 +1,6 @@
 # SketchPoints
 
-## Web app
+## PWA app
 
 PWA web app to allow consumer to view live stream of sketches.
 
