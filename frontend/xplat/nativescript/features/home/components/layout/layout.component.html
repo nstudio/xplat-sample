@@ -1,0 +1,10 @@
+<RadSideDrawer tkToggleNavButton showOverNavigation="true" [drawerTransition]="sideDrawerTransition" selectionBehavior="None" width="100%">
+    <GridLayout tkDrawerContent class="sidedrawer-left" rows="auto,*,auto" columns="*">
+      <sp-sidebar-header></sp-sidebar-header>
+      <sp-gathering-list-nav></sp-gathering-list-nav>
+      <!-- <sp-footer></sp-footer> -->
+    </GridLayout>
+    <StackLayout tkMainContent class="page">
+      <router-outlet></router-outlet>
+    </StackLayout>
+  </RadSideDrawer>

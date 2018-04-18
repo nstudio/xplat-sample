@@ -1,0 +1,40 @@
+type Tag {
+  id: String
+  name: String
+  slug: String
+  description: String
+  logoUrl: String
+  link: String
+  loveIcon: String
+  category: String
+  primaryFlag: Boolean
+  createDate: String
+}
+
+input TagInput {
+  id: String
+  name: String
+  slug: String
+  description: String
+  logoUrl: String
+  link: String
+  loveIcon: String
+  category: String
+  primaryFlag: Boolean
+  createDate: String
+}
+
+input TagQueryParams {
+  match: TagInput
+  limit: Int
+}
+
+type Query {
+  getTag(params: TagQueryParams): Tag
+  getTags(params: TagQueryParams): [Tag]
+}
+
+type Mutation {
+  createTag(tag: TagInput): Tag
+  updateTag(tagId: String, tagUpdates: TagInput): Tag
+}

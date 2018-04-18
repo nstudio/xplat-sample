@@ -1,0 +1,12 @@
+<ActionBar class="action-bar" [title]="title">
+    <!-- <GridLayout horizontalAlignment="center" verticalAlignment="center" padding="2" rows="*" columns="50,*,50"> -->
+      <!-- <Image src="res://ngatltop" class="action-image" *ngIf="!title" (tap)="refreshUser()" horizontalAlignment="center" verticalAlignment="center" row="0" col="1"></Image> -->
+      <!-- <Label [text]="title" class="action-bar-title text-center" *ngIf="title" horizontalAlignment="center" verticalAlignment="center" row="0" col="1"></Label>
+    </GridLayout> -->
+    <ActionItem (tap)="toggleDrawer()">
+      <Button [text]="'ion-navicon' | fonticon" class="ion action-item"></Button>
+    </ActionItem>
+    <ActionItem (tap)="tappedRight.next(true)" ios.position="right" *ngIf="rightButton">
+      <Button [text]="rightButton" class="action-item ion"></Button>
+    </ActionItem>
+  </ActionBar>

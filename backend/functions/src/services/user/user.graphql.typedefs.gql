@@ -1,0 +1,40 @@
+type User {
+  id: String
+  isAdmin: Boolean
+  username: String
+  displayName: String
+  email: String
+  emailLower: String
+  twitterHandle: String
+  profileImageUrl: String
+  createDate: String
+  products: [String]
+}
+
+input UserInput {
+  id: String
+  isAdmin: Boolean
+  username: String
+  displayName: String
+  email: String
+  emailLower: String
+  twitterHandle: String
+  profileImageUrl: String
+  createDate: String
+  products: [String]
+}
+
+input UserQueryParams {
+  match: UserInput
+  limit: Int
+}
+
+type Query {
+  me: User
+  getUser(params: UserQueryParams): User
+  getUsers(params: UserQueryParams): [User]
+}
+
+type Mutation {
+  updateUser(userId: String, userUpdates: UserInput): User
+}

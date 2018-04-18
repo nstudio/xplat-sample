@@ -1,0 +1,8 @@
+.ion {
+  font-family: Ionicons, ionicons;
+  font-size: 30;
+
+  &.disabled {
+      color:$grey-slate;
+  }
+}

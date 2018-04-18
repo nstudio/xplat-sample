@@ -1,0 +1,21 @@
+<sp-header-back [title]="'user.login' | translate"></sp-header-back>
+<GridLayout row="1" col="0" rows="auto,auto,*" columns="*" class="p-20 c-bg-black">
+    <Gif row="0" col="0" src="~/assets/images/unlock.gif" height="187" width="187" horizontalAlign="center" class="text-center"></Gif>
+    <Button row="1" col="0" [text]="'user.login' | translate" (tap)="login()" class="btn btn-primary"></Button>
+    
+    <GridLayout row="2" col="0" class="p-15" rows="auto,auto,auto,auto" columns="*">
+      <Label row="0" col="0" text="You can login via Google to gain access to the following features:" class="h2 text-center m-t-10" textWrap="true"></Label>
+      <GridLayout row="1" col="0" rows="auto" columns="auto,10,*" class="m-y-5">
+        <Label row="0" col="0" [text]="'ion-checkmark-circled' | fonticon" class="ion c-primary"></Label>
+        <Label row="0" col="2" text="Save sketches to your album and share with friends." class="h4" textWrap="true"></Label>
+      </GridLayout>
+      <GridLayout row="2" col="0" rows="auto" columns="auto,10,*" class="m-y-5">
+        <Label row="0" col="0" [text]="'ion-checkmark-circled' | fonticon" class="ion c-primary"></Label>
+        <Label row="0" col="2" text="Show love to your favorite sketch artists by interacting with sketches to increase the love meter." class="h4" textWrap="true"></Label>
+      </GridLayout>
+      <GridLayout row="3" col="0" rows="auto" columns="auto,10,*" class="m-y-5">
+        <Label row="0" col="0" [text]="'ion-checkmark-circled' | fonticon" class="ion c-primary"></Label>
+        <Label row="0" col="2" text="Unlock the potential to become a sketch artist yourself." class="h4" textWrap="true"></Label>
+      </GridLayout>
+    </GridLayout>
+</GridLayout>

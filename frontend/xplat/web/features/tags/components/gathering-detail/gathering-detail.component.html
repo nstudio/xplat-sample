@@ -1,0 +1,22 @@
+<div sp-route-vcref class="p-x-20 sketch-viewer">
+    <h1>{{selected?.name}}</h1>
+    <div class="description" id="read-more" #fullDescription>{{selected?.description}}</div>
+    <a class="readmore" readMore [readMore-length]="150" [readMore-element]="fullDescription">
+        <span class="less">Less <i class="ion ion-arrow-up-b" aria-hidden="true"></i></span>
+        <span class="more">More <i class="ion ion-arrow-down-b" aria-hidden="true"></i></span>
+    </a>
+
+    <div class="m-t-10">
+        <mat-button-toggle-group #artistGroup="matButtonToggleGroup">
+          <mat-button-toggle *ngFor="let artist of (artists$ | async)" [value]="artist.id" (click)="artistFilter = artist.id" [class.active]="artist.selected">{{artist.name}}</mat-button-toggle>
+        </mat-button-toggle-group>
+    </div>
+    <div *ngIf="imageSource$ | async; let image; else loading" class="sketch-area">
+        <img [src]="image" class="sketch-image" draggable="false" />
+    </div>
+    <ng-template #loading>
+        <div class="p-10">
+            loading...
+        </div>
+    </ng-template>
+</div>

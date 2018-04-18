@@ -1,0 +1,43 @@
+{
+    "files.exclude": {
+        "backend/functions/lib": true,
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/node_modules": true,
+        "**/frontend/apps/nativescript-*/app/package.json": true,
+        "**/frontend/hooks": true,
+        "**/frontend/apps/**/hooks": true,
+        "**/frontend/apps/**/platforms": true,
+        "**/frontend/apps/**/report": true,
+        "**/frontend/apps/**/app/**/*.js": {
+        "when": "$(basename).ts"
+        },
+        "**/frontend/apps/**/app/**/*.d.ts": {
+        "when": "$(basename).ts"
+        },
+        "**/frontend/apps/**/app/**/*.css": {
+            "when": "$(basename).scss"
+        },
+        "**/frontend/libs/**/*.js": {
+        "when": "$(basename).ts"
+        },
+        "**/frontend/libs/**/*.d.ts": {
+        "when": "$(basename).ts"
+        },
+        "**/frontend/xplat/**/*.js": {
+        "when": "$(basename).ts"
+        },
+        "**/frontend/xplat/**/*.d.ts": {
+        "when": "$(basename).ts"
+        }
+    },
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": true,
+    "window.zoomLevel": 2,
+    "editor.formatOnSave": false,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.wordWrap": "off"
+}

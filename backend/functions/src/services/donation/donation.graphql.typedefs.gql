@@ -1,0 +1,29 @@
+type Donation {
+  id: String
+  createDate: String
+  userId: String
+  sketchId: String
+  productId: String
+}
+
+input DonationInput {
+  id: String
+  createDate: String
+  userId: String
+  sketchId: String
+  productId: String
+}
+
+input DonationQueryParams {
+  match: DonationInput
+  limit: Int
+}
+
+type Query {
+  getAllDonations(params: DonationQueryParams): [Donation]
+}
+
+type Mutation {
+  createDonation(donation: DonationInput): Donation
+  updateDonation(donationId: String, donationUpdates: DonationInput): Donation
+}

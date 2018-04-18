@@ -1,0 +1,34 @@
+.viewer {
+  color: $sky;
+}
+
+.artist-tab {
+  border-color: #efefef;
+  border-width: 0 1 0 0;
+  padding: 10 10 10 10;
+  color: $grey-light;
+  &.active {
+    background-color: $sp-primary;
+    color: $white;
+  }
+}
+
+.artist-tab-sponsored {
+  background-color: $white;
+  .name {
+    color: $grey-light;
+  }
+  &.active {
+    background-color: $sp-primary;
+    .name {
+      color: $white;
+    }
+  }
+}
+
+.coin-area {
+  .btn-outline {
+    border-color: $lime;
+    color: $lime;
+  }
+}

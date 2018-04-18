@@ -1,0 +1,34 @@
+type Love {
+  id: String
+  userId: String
+  sketchId: String
+  total: Int
+  bonus: Int
+  badgeId: String
+  color: String
+}
+
+input LoveInput {
+  id: String
+  userId: String
+  sketchId: String
+  total: Int
+  bonus: Int
+  badgeId: String
+  color: String
+}
+
+input LoveQueryParams {
+  match: LoveInput
+  limit: Int
+}
+
+type Query {
+  getLove(params: LoveQueryParams): Love
+  getLoves(params: LoveQueryParams): [Love]
+}
+
+type Mutation {
+  createLove(love: LoveInput): Love
+  updateLove(loveId: String, loveUpdates: LoveInput): Love
+}

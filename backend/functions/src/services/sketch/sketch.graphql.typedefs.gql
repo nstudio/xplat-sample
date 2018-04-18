@@ -1,0 +1,63 @@
+type Sketch {
+  id: String
+  gifUrl: String
+  movUrl: String
+  streamTime: Int
+  userId: String
+  gatheringId: String
+  gatheringName: String
+  artistName: String
+  sketchPages: [SketchPage]
+  createDate: String
+}
+
+type SketchPage {
+  sketchFrames: [SketchFrame]
+  createDate: String
+  completed: Boolean
+}
+
+type SketchFrame {
+  url: String
+  streamTime: Int
+  createDate: String
+}
+
+input SketchInput {
+  id: String
+  gifUrl: String
+  movUrl: String
+  streamTime: Int
+  userId: String
+  gatheringId: String
+  artistName: String
+  sketchPages: [SketchPageInput]
+  createDate: String
+}
+
+input SketchPageInput {
+  sketchFrames: [SketchFrameInput]
+  createDate: String
+  completed: Boolean
+}
+
+input SketchFrameInput {
+  url: String
+  streamTime: Int
+  createDate: String
+}
+
+input SketchQueryParams {
+  match: SketchInput
+  limit: Int
+}
+
+type Query {
+  getSketch(params: SketchQueryParams): Sketch
+  getSketches(params: SketchQueryParams): [Sketch]
+}
+
+type Mutation {
+  createSketch(sketch: SketchInput): Sketch
+  updateSketch(sketchId: String, sketchUpdates: SketchInput): Sketch
+}

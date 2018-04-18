@@ -1,0 +1,54 @@
+@mixin unselectable {
+  -webkit-user-select: none;
+  -moz-user-select:    none;
+  -ms-user-select:     none;
+  user-select:         none;
+}
+
+/*
+ * CSS Transform - Scale and Rotate
+ */
+
+ @mixin scale-rotate($scale,
+ $rotate) {
+   -webkit-transform: scale($scale) rotate($rotate);
+   -ms-transform:     scale($scale) rotate($rotate);
+   -o-transform:      scale($scale) rotate($rotate);
+   transform:         scale($scale) rotate($rotate);
+ }
+ 
+ @mixin transform($transform) {
+   transform:         $transform;
+   -ms-transform:     $transform;
+   -moz-transform:    $transform;
+   -webkit-transform: $transform;
+   -o-transform:      $transform;
+ }
+ 
+ @mixin transition($transition) {
+   -webkit-transition: $transition;
+   -moz-transition:    $transition;
+   -o-transition:      $transition;
+   transition:         $transition;
+ }
+ 
+ @mixin animation($animation) {
+   -webkit-animation: $animation;
+   -moz-animation:    $animation;
+   -ms-animation:     $animation;
+   -o-animation:      $animation;
+   animation:         $animation;
+ }
+ 
+ /*
+  * User Select
+  */
+ 
+ @mixin user-select($val) {
+   -webkit-touch-callout: $val;
+   -webkit-user-select:   $val;
+   -khtml-user-select:    $val;
+   -moz-user-select:      $val;
+   -ms-user-select:       $val;
+   user-select:           $val;
+ }

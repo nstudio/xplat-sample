@@ -1,0 +1,5 @@
+<GridLayout rows="auto" columns="10,75,*,75,10" class="action-bar p-10 modal-ab" row="0" col="0">
+    <Button [text]="'ion-ios-close-empty' | fonticon" (tap)="close()" class="ion action-item text-left" backgroundColor="transparent" row="0" col="1"></Button>
+    <Label [text]="title" class="action-bar-title-modal text-center" row="0" col="2"></Label>
+    <Button [text]="moreIcon | fonticon" (tap)="more()" class="ion action-item text-right" row="0" col="3" *ngIf="showMoreButton" horizontalAlignment="right"></Button>
+</GridLayout>

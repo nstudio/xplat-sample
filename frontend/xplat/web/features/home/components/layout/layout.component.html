@@ -1,0 +1,16 @@
+<sp-header [isMobile]="isMobile" (onToggle)="sidenav.toggle()"></sp-header>
+
+<mat-sidenav-container class="main-container" color="accent">
+
+  <mat-sidenav #sidenav mode="side" [opened]="!isMobile" [mode]="isMobile ? 'over' : 'side'">
+    <!-- [fixedInViewport]="isMobile"-->
+    <sp-gathering-list-nav></sp-gathering-list-nav>
+  </mat-sidenav>
+
+  <section>
+    <router-outlet></router-outlet>
+  </section>
+
+</mat-sidenav-container>
+
+<sp-footer></sp-footer>

@@ -1,0 +1,18 @@
+Page {
+  /**
+    * should be set to your app's common/overall background-color
+    * will help prevent white flashes when changing routes
+    * sample app uses a white background so just using $white here
+    **/
+  background-color: $background;
+}
+
+ListView {
+  background-color: $background;//map-get($mat-grey, 800);
+  separator-color: transparent;
+}
+
+SearchBar {
+  background-color: $background;
+  margin: 0;//16;
+}

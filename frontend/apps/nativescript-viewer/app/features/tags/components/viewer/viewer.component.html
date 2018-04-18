@@ -1,0 +1,15 @@
+<sp-header [title]="selected?.name" [rightButton]="'ion-ios-upload-outline' | fonticon" (tappedRight)="share()"></sp-header>
+<GridLayout class="w-full h-full c-bg-white" rows="auto,*,88" columns="*" sp-route-vcref>
+    <GridLayout id="artist-names" rows="auto" columns="auto,*" row="0" col="0">
+        <ScrollView row="0" col="1" orientation="horizontal">
+            <StackLayout orientation="horizontal" class="c-bg-white">
+                <Label [text]="artist.name" *ngFor="let artist of (artists$ | async)" class="artist-tab" (tap)="artistFilter = artist.id" [class.active]="artist.selected"></Label>     
+            </StackLayout>
+        </ScrollView>
+    </GridLayout>
+    <ImageZoom id="image-area" row="1" col="0" [src]="image$ | async" maxZoom="5" minZoom="1"></ImageZoom>
+
+    <StackLayout row="2" col="0" class="p-x-20">
+        <Label [text]="'viewer.show-love-label' | translate" class="t-15 c-grey-dark" textWrap="true"></Label>
+    </StackLayout>
+</GridLayout>

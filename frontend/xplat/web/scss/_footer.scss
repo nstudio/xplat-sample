@@ -1,0 +1,16 @@
+.main-footer {
+  color: lighten(#c2185b, 30%) !important;
+  font-size: 12px;
+  font-weight: normal;
+  height: 30px !important;
+
+  a {
+    color: lighten(#c2185b, 40%) !important;
+    text-decoration: none;
+    margin: 0 5px 0 5px;
+
+    &:hover {
+      color: $white !important;
+    }
+  }
+}

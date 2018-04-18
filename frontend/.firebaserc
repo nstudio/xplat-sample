@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "ssr-dev": "sketchpointsssr-dev",
+    "ssr-prod": "sketchpointsssr",
+    "pwa-dev": "sketchpoints-pwa-development",
+    "pwa-prod": "sketchpoints-pwa-production"
+  }
+}

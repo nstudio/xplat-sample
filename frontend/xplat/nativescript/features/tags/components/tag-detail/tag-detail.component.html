@@ -1,0 +1,42 @@
+<sp-header [title]="title"></sp-header>
+<StackLayout class="page" sp-route-vcref>
+    <StackLayout *ngIf="selected; else loading">
+        <GridLayout *ngIf="!selectedGathering" rows="auto,auto,*" columns="*">         
+            <Label row="0" col="0" class="top-heading" [text]="selected.description" textWrap="true" [class.tablet]="appService.deviceType === 'Tablet'"></Label>   
+            <SearchBar 
+                id="search" #search
+                row="1" col="0" 
+                hint="Search" text="" 
+                (clear)="clear($event)" 
+                (textChange)="search$.next(search.text)" 
+                (loaded)="doNotShowAndroidKeyboard($event)" android:height="40"></SearchBar>
+            <RadListView row="2" col="0" 
+                [items]="gatherings" 
+                class="list-group h-full" 
+                separatorColor="transparent" 
+                (loaded)="listviewLoaded($event)"
+                (itemLoading)="appService.disableRowColor($event)"
+                pullToRefresh="true" 
+                (pullToRefreshInitiated)="onPullRefreshInitiated($event)">
+                <ng-template tkListItemTemplate let-gathering="item">
+                    <StackLayout orientation="horizontal" class="card" [nsRouterLink]="[homePath, selected.slug, gathering.slug]" [class.tablet]="appService.deviceType === 'Tablet'">
+                        <Label class="ion c-white" [text]="'ion-easel' | fonticon"></Label>
+                        <StackLayout class="m-l-10">
+                            <Label [text]="gathering.name" class="list-group-item-heading c-white"></Label>
+                            <Label [text]="gathering.description" class="list-group-item-text"></Label>
+                        </StackLayout>
+                    </StackLayout>
+                </ng-template>
+                <ListViewGridLayout
+                    tkListViewLayout
+                    [itemHeight]="appService.deviceType === 'Phone' ? 75 : 115"
+                    [spanCount]="appService.deviceType === 'Phone' ? 1 : 2">
+                </ListViewGridLayout>
+            </RadListView>
+        </GridLayout>
+    </StackLayout>
+    <ng-template #loading>
+        <ActivityIndicator busy="true" width="100" height="100" color="white" class="activity-indicator"></ActivityIndicator>
+    </ng-template>
+    <router-outlet></router-outlet>
+</StackLayout>

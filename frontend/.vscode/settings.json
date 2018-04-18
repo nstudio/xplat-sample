@@ -1,0 +1,30 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/apps/nativescript-*/app/**/*.js": {
+            "when": "$(basename).ts"
+        },
+        "**/apps/nativescript-*/app/**/*.d.ts": {
+            "when": "$(basename).ts"
+        },
+        "**/apps/nativescript-*/app/**/*.css": {
+            "when": "$(basename).scss"
+        },
+        "**/libs/**/*.js": {
+            "when": "$(basename).ts"
+        },
+        "**/libs/**/*.d.ts": {
+            "when": "$(basename).ts"
+        },
+        "**/xplat/**/*.js": {
+            "when": "$(basename).ts"
+        },
+        "**/xplat/**/*.d.ts": {
+            "when": "$(basename).ts"
+        }
+    }
+}

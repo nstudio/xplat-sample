@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "rootDir": ".",
+    "target": "ES5",
+    "lib": ["es7", "esnext.asynciterable", "dom"],
+    "sourceMap": true,
+    "outDir": "lib",
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noImplicitThis": true
+  },
+  "exclude": ["node_modules"]
+}

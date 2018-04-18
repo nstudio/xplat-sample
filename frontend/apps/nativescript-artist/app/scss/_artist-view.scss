@@ -1,0 +1,71 @@
+.artist-view {
+  .color-swatch {
+    width: 25;
+    height: 25;
+    border-width:1;
+    border-color: #000;
+    vertical-align: center;
+    // horizontal-align: center;
+
+    &.reuse {
+      border-radius: 20;
+    }
+    // &.left {
+    //   horizontal-align: left;
+    // }
+  }
+
+  .page-img {
+    margin-right: 5;
+    &.active {
+      border-width: 2;
+      border-color: $sky;
+    }
+  }
+  
+  .toolbar {
+    .label {
+      color: $grey-light;
+    }
+    .ion {
+      color: $grey-light;
+      &.clear {
+        color: $sky;
+      }
+      &.active {
+        color: $ab-background;
+      }
+      &.done {
+        &.active {
+          color: green;
+        }
+      }
+      &.view-gif {
+        color: $sky;
+      }
+    }
+  }
+
+  .stream-area {
+    vertical-align: center;
+
+    // &.active {
+    //   background-color: $sp-primary;
+    // }
+
+    .label {
+      color: $white;
+    }
+
+    .ion {
+      color: $white;
+      font-size: 40;
+      &.active {
+        color: $sp-primary;
+      }
+    }
+  }
+}
+// .bg-image-thumb {
+
+// }

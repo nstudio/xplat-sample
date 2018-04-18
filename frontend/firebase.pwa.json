@@ -1,0 +1,33 @@
+{
+  "hosting": {
+    "headers": [
+      {
+        "source": "**/*.@(eot|otf|ttf|ttc|woff|font.css)",
+        "headers": [
+          {
+            "key": "Access-Control-Allow-Origin",
+            "value": "*"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(jpg|jpeg|gif|png|ico)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=605000"
+          }
+        ]
+      }
+    ],
+    "public": "dist/apps/web-viewer",
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "rewrites": [
+      {
+        "source": "!**/*.*",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

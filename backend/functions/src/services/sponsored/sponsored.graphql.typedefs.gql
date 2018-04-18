@@ -1,0 +1,35 @@
+type Sponsored {
+  id: String
+  tagId: String
+  users: [SponsorUser]
+}
+
+type SponsorUser {
+  id: String
+  name: String
+}
+
+input SponsoredInput {
+  id: String
+  tagId: String
+  users: [SponsorUserInput]
+}
+
+input SponsorUserInput {
+  id: String
+  name: String
+}
+
+input SponsoredQueryParams {
+  match: SponsoredInput
+  limit: Int
+}
+
+type Query {
+  getAllSponsors(params: SponsoredQueryParams): [Sponsored]
+}
+
+type Mutation {
+  createSponsored(sponsored: SponsoredInput): Sponsored
+  updateSponsored(sponsoredId: String, sponsoredUpdates: SponsoredInput): Sponsored
+}

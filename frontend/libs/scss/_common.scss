@@ -1,0 +1,17 @@
+// share variables
+@import 'variables';
+
+// shared mixins
+@import '~nativescript-theme-core/scss/mixins/index';
+
+// shared utilities
+@import '~nativescript-theme-core/scss/utilities/index';
+
+// shared common classes
+.c-primary {
+  color: $sp-primary;
+}
+
+.c-bg-primary {
+  background-color: $sp-primary;
+}

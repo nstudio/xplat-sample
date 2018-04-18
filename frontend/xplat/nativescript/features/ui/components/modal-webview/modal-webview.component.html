@@ -1,0 +1,10 @@
+<GridLayout rows="auto,*" columns="*">
+    <sp-modal-title-bar [title]="title" [params]="params" row="0" col="0"></sp-modal-title-bar>
+    <WebView
+        #webView
+        (loaded)="webViewLoaded(webView)"
+        (loadFinished)="loadFinished($event)"
+        row="1"
+        col="0"></WebView>
+
+</GridLayout>

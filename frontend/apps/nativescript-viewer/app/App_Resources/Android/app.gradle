@@ -1,0 +1,45 @@
+// Add your native dependencies here:
+
+dependencies {
+    configurations.all {
+        exclude group: 'commons-logging', module: 'commons-logging'
+        resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+            def requested = details.requested
+            if (requested.group == 'com.google.android.gms' || requested.group == 'com.google.firebase') {
+                details.useVersion '11.8.0'
+            } else if (requested.group == 'com.android.support') {
+                //  TODO ... com.android.support major version should match buildToolsVersion
+                details.useVersion '27.+'
+            //} else if (requested.group == 'com.google.gms' && requested.name == 'google-services') {
+                // details.useVersion '3.+'
+            //} else if (requested.group == 'com.facebook.android') {
+                // details.useVersion '4.28.0'
+            }
+        }
+    }
+}
+
+project.ext {
+  googlePlayServicesVersion = "11.8.0"
+}
+
+android {  
+  compileSdkVersion 27
+  buildToolsVersion "27.0.3"
+  defaultConfig {  
+    minSdkVersion 21
+    targetSdkVersion 27
+    generatedDensities = []
+    applicationId = "io.nstudio.sketchpoints"  
+    multiDexEnabled true
+  }  
+  aaptOptions {  
+    additionalParameters "--no-version-vectors"  
+  } 
+  dexOptions {
+    javaMaxHeapSize "4g"
+  } 
+  project.ext {
+      googlePlayServicesVersion = "11.8.0"
+  }
+} 

@@ -1,0 +1,13 @@
+<ActionBar>
+  <!-- <NavigationButton visibility="collapsed"></NavigationButton> -->
+  <GridLayout rows="65" columns="50,*,75" class="action-bar" height="65">
+    <!--<Button text="&#xf008;" (tap)="back()" class="fontello action-item"-->
+    <Button [text]="backIcon | fonticon" (tap)="back()" class="ion action-item"
+      row="0" col="0"></Button>
+    <Label [text]="title || ''" class="action-bar-title" verticalAlignment="center"
+      row="0" col="1"></Label>
+    <Button [text]="rightButton" 
+      (tap)="tappedRight.next(true)" class="action-item text-right"
+      row="0" col="2" *ngIf="rightButton"></Button>
+  </GridLayout>
+</ActionBar>

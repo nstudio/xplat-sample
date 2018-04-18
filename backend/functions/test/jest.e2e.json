@@ -1,0 +1,23 @@
+{
+    "testEnvironment": "jest-environment-node",
+    "rootDir": "../",
+    "roots": ["src"],
+    "setupTestFrameworkScriptFile": "./test/jest.e2e.setup.ts",
+    "testPathIgnorePatterns": ["/fixtures/"],
+    "collectCoverageFrom": ["src/**"],
+    "coverageDirectory": "coverage",
+    "coverageThreshold": {
+      "global": {
+        "statements": 0,
+        "branches": 0,
+        "functions": 0,
+        "lines": 0
+      }
+    },
+    "transform": {
+      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(e2e))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": ["ts", "js", "json"]
+  }
+  

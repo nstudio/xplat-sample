@@ -1,0 +1,58 @@
+{
+  "menu": {
+    "home": "Casa",
+    "all-events": "All Events",
+    "events": "Events",
+    "copyright": "2018 SketchPoints, construido por nStudio"
+  },
+  "error": {
+    "upload-photo-lbl": "Lo sentimos, ocurrió un error al cargar esa foto."
+  },
+  "dialogs": {
+    "confirm": "Confirmar",
+    "yes": "Sí",
+    "yes-login": "Sí, ¡inicia sesión!",
+    "yes-delete": "Sí, borrar",
+    "cancel": "Cancelar",
+    "no": "No",
+    "camera": "Cámara",
+    "confirm-photo-delete": "¿Seguro que quieres eliminar esta foto?",
+    "close": "Cerca",
+    "sms": "Mensaje de texto"
+  },
+  "item": {
+    "delete-lbl": "Borrar"
+  },
+  "general": {
+    "tip": "Donar",
+    "export": "Exportar",
+    "twitter-unknown": "Twitter desconocido! ¡Lo siento mucho!",
+    "picture": "Imagen",
+    "back": "Espalda",
+    "need-help": "¿Necesitas ayuda?",
+    "help": "Ayuda",
+    "email-us": "Envíenos un correo electrónico a info@sketchpoints.io",
+    "tweet-us": "Tweet en nosotros",
+    "error": "Lamentamos que haya ocurrido un error.",
+    "photo-album-tle": "Album de Fotos",
+    "edit": "Editar",
+    "save": "Salvar",
+    "update": "Actualizar",
+    "profile": "Perfil"
+  },
+  "user": {
+    "language": "Idioma",
+    "unsaved": "Tiene cambios sin guardar. ¿Estás seguro de que quieres salir sin guardar?",
+    "name": "Nombre",
+    "phone": "Teléfono",
+    "company": "Company",
+    "email": "Empresa",
+    "updated": "¡Tu perfil fue actualizado con éxito!",
+    "logout": "Cerrar Sesión",
+    "logged-in": "Ahora está conectado",
+    "toggle-fav": "Alternar favoritos"
+  },
+  "conduct": {
+    "title": "Código de Conducta"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "menu": {
+    "home": "家",
+    "all-events": "All Events",
+    "events": "Events",
+    "copyright": "2018 SketchPoints 由__建造 nStudio"
+  },
+  "error": {
+    "upload-photo-lbl": "抱歉，上傳該照片時發生錯誤。"
+  },
+  "dialogs": {
+    "confirm": "確認",
+    "yes": "是",
+    "yes-login": "是的，登錄！",
+    "yes-delete": "是的，刪除",
+    "cancel": "取消",
+    "no": "沒有",
+    "camera": "相機",
+    "confirm-photo-delete": "你確定要刪除這張照片？",
+    "close": "關",
+    "sms": "短信"
+  },
+  "item": {
+    "delete-lbl": "刪除"
+  },
+  "general": {
+    "tip": "捐",
+    "export": "出口",
+    "twitter-unknown": "Twitter未知！ 非常抱歉！",
+    "picture": "图片",
+    "back": "背部",
+    "need-help": "需要幫忙？",
+    "help": "幫幫我",
+    "email-us": "請發送電子郵件至info@sketchpoints.io",
+    "tweet-us": "鳴叫在我們",
+    "error": "我們很抱歉發生錯誤。",
+    "photo-album-tle": "相片集",
+    "edit": "編輯",
+    "save": "保存",
+    "update": "更新",
+    "profile": "輪廓"
+  },
+  "user": {
+    "language": "语言",
+    "unsaved": "您有未保存的更改。 你確定要退出而不儲蓄？",
+    "person": "個人站在你面前。",
+    "name": "名稱",
+    "phone": "電話",
+    "company": "公司",
+    "email": "電子郵件",
+    "updated": "您的個人資料已成功更新！",
+    "logout": "登出",
+    "logged-in": "您現在已經登錄",
+    "toggle-fav": "切換收藏夾"
+  },
+  "conduct": {
+    "title": "行為守則"
+  }
+}

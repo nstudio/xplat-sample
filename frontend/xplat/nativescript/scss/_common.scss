@@ -1,0 +1,29 @@
+@import 'variables';
+
+// {N} theme rulesets
+// @import '~nativescript-theme-core/scss/index';
+@import '~nativescript-theme-core/scss/action-bar';
+@import '~nativescript-theme-core/scss/activity-indicator';
+@import '~nativescript-theme-core/scss/buttons';
+@import '~nativescript-theme-core/scss/icons';
+@import '~nativescript-theme-core/scss/forms';
+@import '~nativescript-theme-core/scss/labels';
+@import '~nativescript-theme-core/scss/list-view';
+@import '~nativescript-theme-core/scss/page';
+@import '~nativescript-theme-core/scss/progress';
+@import '~nativescript-theme-core/scss/segmented-bar';
+@import '~nativescript-theme-core/scss/side-drawer';
+@import '~nativescript-theme-core/scss/slider';
+@import '~nativescript-theme-core/scss/switch';
+@import '~nativescript-theme-core/scss/tabs';
+@import '~nativescript-theme-core/scss/login';
+
+// shared mobile (iOS/Android) app styles
+@import 'cards';
+@import 'fonts';
+@import 'forms';
+@import 'labels';
+@import 'list';
+@import 'modals';
+@import 'sidedrawer';
+@import 'tags';

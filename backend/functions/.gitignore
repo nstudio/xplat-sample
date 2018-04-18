@@ -1,0 +1,6 @@
+/lib
+/src/**/*.js
+/src/**/*.d.ts
+app/**/*.map
+env.json
+package-lock.json

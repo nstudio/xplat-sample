@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "api-dev": "sketchpoints-dev",
+    "job-dev": "tbd",
+    "job-prod": "tbd"
+  }
+}

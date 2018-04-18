@@ -1,0 +1,12 @@
+// .list-image {
+//   width: 60;
+//   height: 60;
+// }
+
+.list-group {
+  background-color: $background;
+
+  &.modal-select {
+    background-color: $white;
+  }
+}

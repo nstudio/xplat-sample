@@ -1,0 +1,65 @@
+.main-container {
+  position: absolute !important;
+  top: 64px;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+}
+
+.main-header {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.main-footer {
+  position: fixed !important;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.ion {
+  font-size: 30px;
+}
+
+.fill-remaining-space {
+  flex: 1 1 auto;
+}
+
+.contributor-card {
+  max-width: 200px;
+
+  .mat-button-wrapper {
+    padding-top: 6px !important;
+  }
+}
+
+.sketch-image {
+  max-height: 350px;
+}
+
+@media (max-width: 599px) {
+  .main-container {
+    top: 56px;
+  }
+}
+
+@media (min-height: 664px) {
+  .sketch-image {
+    max-height: 350px;
+  }
+}
+
+@media (min-height: 780px) {
+  .sketch-image {
+    max-height: 465px;
+  }
+}
+
+@media (min-height: 900px) {
+  .sketch-image {
+    max-height: 520px;
+  }
+}

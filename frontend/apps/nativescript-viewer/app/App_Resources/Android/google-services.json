@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "337521535418",
+    "firebase_url": "https://sketchpoints-dev.firebaseio.com",
+    "project_id": "sketchpoints-dev",
+    "storage_bucket": "sketchpoints-dev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:337521535418:android:861495035cb4da45",
+        "android_client_info": {
+          "package_name": "io.nstudio.sketchpointsdev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "337521535418-qqare3alnhmtk7pbcchsh8a3b3ku2e5o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUvxficLyDWmU-WkVg0myZ5HXXB-EzJ3U"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

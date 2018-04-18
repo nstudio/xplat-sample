@@ -1,0 +1,94 @@
+{
+  "menu": {
+    "home": "Home",
+    "all-events": "All Events",
+    "events": "Events",
+    "copyright": "2018 SketchPoints, built by nStudio"
+  },
+  "viewer": {
+    "show-love-label": "Show the artist love by holding down above. Hold for 4 seconds to give them a badge."
+  },
+  "error": {
+    "upload-photo-lbl": "Sorry, an error occurred uploading that photo."
+  },
+  "dialogs": {
+    "confirm": "Confirm",
+    "yes": "Yes",
+    "yes-login": "Yes, login!",
+    "yes-delete": "Yes, delete",
+    "ok": "Ok",
+    "cancel": "Cancel",
+    "no": "No",
+    "camera": "Camera",
+    "confirm-photo-delete": "Are you sure you want to remove this photo?",
+    "close": "Close",
+    "sms": "Text message"
+  },
+  "item": {
+    "delete-lbl": "Delete"
+  },
+  "general": {
+    "tip": "Tip",
+    "export": "Export",
+    "twitter-unknown": "Twitter unknown! So sorry!",
+    "picture": "Picture",
+    "back": "Back",
+    "need-help": "Need Help?",
+    "help": "Help",
+    "email-us": "Email us at info@sketchpoints.io",
+    "tweet-us": "Tweet at us",
+    "error": "We're sorry an error occurred.",
+    "photo-album-tle": "Photo Album",
+    "edit": "Edit",
+    "save": "Save",
+    "update": "Update",
+    "profile": "Profile",
+    "heading": "Browse sketches of key points to the following:"
+  },
+  "help": {
+    "intro": "Welcome to SketchPoints! You can view live streams of sketches coming to life by artists around the world. Browse areas of interest to tune into.",
+    "item": "This area groups together a number of related streams together. Tap to view more."
+  },
+  "pay": {
+    "desc": "Stream your sketch points to an unlimited audience for .99 cents!",
+    "why1": "Make money as an artist by receiving donations from viewers that love your sketches.",
+    "why2": "Promote your skills by entertaining others.",
+    "why3": "Enhance the events you attend by providing your own artistic perspective."
+  },
+  "user": {
+    "language": "Language",
+    "unsaved": "You have unsaved changes. Are you sure you want to exit without saving?",
+    "name": "Name",
+    "phone": "Phone",
+    "company": "Company",
+    "email": "Email",
+    "updated": "Your profile was successfully updated!",
+    "login": "Login",
+    "logout": "Logout",
+    "logged-in": "You are now logged in",
+    "toggle-fav": "Toggle Favorites"
+  },
+  "conduct": {
+    "title": "Code of Conduct"
+  },
+  "purchase": {
+    "canceled-tle": "Purchase cancelled",
+    "canceled-txt": "Your purchase has been cancelled. ",
+    "failed-android-txt": "Something went wrong. Please make sure that:\n\nYou are connected to the internet.\nGoogle Play is downloaded and up to date.",
+    "failed-ios-txt": "Something went wrong. Please make sure that:\n\nYou are connected to the internet.\nApp store is downloaded and up to date.",
+    "failed-tle": "Purchase failed",
+    "invalidcc-tle": "Invalid Credit Card Number",
+    "not-restored-android-txt": "Looks like we failed to restore your purchases. This could mean: \n\nYou aren't connected to the internet.\nYou need to download or update your Google Play store.",
+    "not-restored-ios-txt": "Looks like we failed to restore your purchases. This could mean: \n\nYou aren't connected to the internet.\nYou need to download or update your app store.",
+    "not-restored-tle": "Restore Purchase Failed\n\n",
+    "owned-lbl": "PURCHASED!",
+    "pending-lbl": "PENDING",
+    "previous-lbl": "We need to check if you've made any iTunes purchases for this year that have not yet been applied to your account.",
+    "restore-lbl": "Restore purchases",
+    "restored-lbl": "All valid purchases have been restored, hooray!",
+    "restored-tle": "Purchases Restored",
+    "restoring-lbl": "Restoring purchases",
+    "succeeded-tle": "Purchase successful",
+    "succeeded-txt": "Your purchase was successful, hooray!"
+  }
+}

@@ -1,0 +1,106 @@
+.sidedrawer-left {
+    background-color: $grey-slate;
+    .sidedrawer-header {
+        padding: 20 16 0 16;
+        background-color: $side-drawer-header-background;
+        .sidedrawer-header-image {
+            background-color: $sp-primary;
+            height: 220;
+            width: 220;
+            border-radius: 0; //60;
+            margin-bottom: 20;
+        }
+        .sidedrawer-header-brand {
+            color: $white;
+        }
+    }
+    .sidedrawer-content {
+        background-color: $grey-slate;
+        .sidedrawer-item {
+            .sidedrawer-list-item-icon {
+                horizontal-align: center;
+                text-align: center;
+                font-size: 28;
+                color: $grey-light;
+            }
+            .sidedrawer-list-item-text {
+                border-width: 0;
+                font-size: 20;
+                color: $grey-light;
+            }
+            .list-group {
+                padding: 0;
+                margin: 0;
+                .list-group-item {
+                    padding: 16 0 16 0;
+                    .sidedrawer-list-item-text-sub {
+                        border-width: 0;
+                        padding: 0;
+                        margin: 0;
+                        text-align: left;
+                        font-size: 22;
+                    }
+                    .list-group-item-text-sub {
+                        font-size: 12;
+                        color: $blue-light;
+                    }
+                }
+            }
+            &.active {
+                background-color: $white;
+                .sidedrawer-list-item-icon {
+                    color: $sp-primary;
+                }
+                .sidedrawer-list-item-text {
+                    font-weight: bold;
+                    color: $black;
+                }
+            }
+        }
+    }
+}
+
+.sidedrawer-content {
+    .list-group {
+        .list-group-item {
+            &.active {
+                background-color: $list-item-active;
+            }
+        }
+    }
+}
+
+.copyright {
+    background-color: #404040;
+  
+    .label {
+        color: #696969;
+        vertical-align: center;
+        font-size: 12;
+    }
+
+    .menu-option {
+        background-color: #404040;
+        padding:8 0 8 20;
+
+        .ion {
+            color: $white;
+        }
+        .label {
+            color: $white;
+            font-size: 15;
+        }
+
+        &.active {
+            background-color: $white;
+            .ion {
+                color: $sp-primary;
+            }
+            .label {
+                color: $black;
+                font-weight: bold;
+            } 
+        }
+        
+    }
+  }

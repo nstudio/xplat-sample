@@ -1,0 +1,4 @@
+
+  <Image [src]="badge.icon" [selectedColor]="badge.color" width="88" height="88"></Image>
+  <Label [text]="badge.name" class="t-20 c-grey-dark text-center"></Label>
+  <Button [text]="badge.btn" (tap)="badge.btnAction(badge)" class="btn btn-primary btn-rounded-sm" [class.btn-sky]="badge.btn=='Choose'" [class.btn-grey]="badge.btn!='Choose'"></Button>

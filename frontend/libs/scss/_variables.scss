@@ -1,0 +1,40 @@
+// base theme
+@import '~@angular/material/theming';
+
+// base variables
+@import '~nativescript-theme-core/scss/variables';
+
+// base colors
+$grey-slate: #4d4d4d;
+$grey-light: #999999;
+$blue-light: #4ac1fa;
+$grey-darker: #2e2e2e;
+$sp-primary: map-get($mat-pink, 700);
+$background: #303030;
+$primary: #fff;
+$secondary: darken($primary, 30%);
+$disabled: darken($primary, 50%);
+$accent: $sky;
+
+// actionbar
+$ab-background: $sp-primary;
+$ab-color: $primary;
+
+// headings
+$headings-color: $primary;
+
+// list
+$list-item-active: rgba(255, 255, 255, 0.1);
+
+// sidedrawer
+$item-color-android : #a0a0a0;
+$item-active-background: #2b2b2b;
+$item-active-color: $accent;
+$item-active-icon-color: #fff;
+$item-color-ios: #848484;
+$image-background: #e0e0e0;
+$side-drawer-header-background: $ab-background;//$accent;
+$side-drawer-header-brand: #fff;
+$side-drawer-background: #303030;
+
+

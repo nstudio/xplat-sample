@@ -1,0 +1,40 @@
+<GridLayout class="sidedrawer-content" rows="auto,auto,*" columns="*" row="1" col="0">
+  <!-- Home -->
+  <GridLayout columns="60,*,auto" rows="60" row="0" col="0" (tap)="changeNav([homePath])" pageTransition="slideLeft" class="sidedrawer-item"
+    [class.active]="activeUrl == homePath || activeUrl == '/'">
+    <Label [text]="'ion-ios-paper-outline' | fonticon" class="ion sidedrawer-list-item-icon" row="0" col="0" (tap)="changeNav([homePath])"></Label>
+    <Label text="Browse..." class="sidedrawer-list-item-text" row="0" col="1" (tap)="changeNav([homePath])"></Label>
+  </GridLayout>
+  <!-- Selected Tag -->
+  <GridLayout *ngIf="selectedTag" columns="60,*,auto" rows="60" row="1" col="0" (tap)="changeNav([homePath, selectedTag.slug])" pageTransition="slideLeft" class="sidedrawer-item"
+    [class.active]="activeUrl == (homePath + selectedTag.slug)">
+    <Label [text]="'ion-ios-albums-outline' | fonticon" class="ion sidedrawer-list-item-icon" row="0" col="0" (tap)="changeNav([homePath, selectedTag.slug])"></Label>
+    <Label [text]="selectedTag.name" class="sidedrawer-list-item-text" row="0" col="1" (tap)="changeNav([homePath, selectedTag.slug])"></Label>
+  </GridLayout>
+
+  <!-- List of gatherings, only show when event is activated -->
+  <ListView [items]="gatherings" class="list-group" row="2" col="0" separatorColor="transparent" (itemLoading)="appService.disableRowColor($event)">
+    <ng-template let-gathering="item">
+      <StackLayout orientation="horizontal" class="list-group-item" (tap)="changeNav([homePath, selectedTag.slug, gathering.slug])" [class.active]="activeUrl == (homePath + selectedTag.slug + '/' + gathering.slug)">
+        <Label class="ion sidedrawer-list-item-icon" [text]="'ion-easel' | fonticon"></Label>
+          <Label [text]="gathering.name" class="sidedrawer-list-item-text-sub"></Label>
+      </StackLayout>
+    </ng-template>
+  </ListView>
+</GridLayout>
+<GridLayout row="2" col="0" rows="auto,auto,auto" columns="*" class="copyright">
+  <GridLayout *ngIf="appService.user" columns="60,*,auto" rows="60" row="0" col="0" (tap)="changeNav([homePath, 'profile', appService.user.username])" [class.active]="activeUrl == (homePath + 'profile/' + appService.user.username)" class="menu-option">
+    <Label [text]="'ion-person' | fonticon" class="ion" row="0" col="0"></Label>
+    <Label [text]="'general.profile' | translate" row="0" col="1" class="label"></Label>
+  </GridLayout>
+  <GridLayout *ngIf="appService.user" columns="60,*,auto" rows="60" row="1" col="0" (tap)="userService.logout()" class="menu-option">
+    <Label [text]="'ion-log-out' | fonticon" class="ion" row="0" col="0"></Label>
+    <Label [text]="'user.logout' | translate" row="0" col="1" class="label"></Label>
+  </GridLayout>
+  <GridLayout *ngIf="!appService.user" columns="60,*,auto" rows="60" row="0" col="0" (tap)="login()" class="menu-option">
+    <Label [text]="'ion-log-in' | fonticon" class="ion" row="0" col="0"></Label>
+    <Label [text]="'user.login' | translate" row="0" col="1" class="label"></Label>
+  </GridLayout>
+
+  <Label row="2" col="0" [text]="'menu.copyright' | translate" class="label p-l-10 p-b-10 p-t-10" (tap)="viewWeb()"></Label>
+</GridLayout>

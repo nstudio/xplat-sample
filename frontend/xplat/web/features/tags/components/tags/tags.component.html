@@ -1,0 +1,18 @@
+<div sp-route-vcref class="p-x-20">
+  <h3>{{'general.heading' | translate}}</h3>
+
+  <mat-nav-list *ngIf="tags && tags.length; else loading;">
+    <mat-list-item *ngFor="let tag of tags" [routerLink]="[homePath, tag.slug]">
+      <!-- <mat-icon matListIcon>featured_video</mat-icon> -->
+      <img matListAvatar [src]="tag.logoUrl" [attr.alt]="tag.name">
+      <h3 matLine style="font-size: 24px;">{{tag.name}}</h3>
+      <p matLine style="color: #999;">{{tag.description}}</p>
+    </mat-list-item>
+  </mat-nav-list>
+
+  <ng-template #loading>
+    <div class="p-10">
+      loading...
+    </div>
+  </ng-template>
+</div>

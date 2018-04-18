@@ -1,0 +1,33 @@
+.category-row {
+  background-color: #aaa;
+  padding: 7;
+
+  Label {
+    font-size:15;
+    color: $white;
+    vertical-align: center;
+  }
+}
+
+.selectable-row {
+  border-width: 0 0 1 0;
+  border-color: #ccc;
+  padding: 8 8 8 16;
+
+  .select-btn {
+    font-size: 17;
+    color: $black;
+    width: 100%;
+    text-align: left;
+    vertical-align: center;
+    white-space: normal;
+
+  }
+  &.selected {
+    background-color:  $sp-primary;
+
+    .select-btn {
+      color: $white;
+    }
+  }
+}

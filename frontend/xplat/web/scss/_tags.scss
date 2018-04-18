@@ -1,0 +1,27 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Roboto, Arial, sans-serif;
+  background-color: lightgray;
+}
+
+*:focus {
+  outline:none !important;
+}
+
+a {
+  text-decoration: none;
+  color: $sky;
+
+  &:hover {
+    color:$white;
+  }
+}
+
+mat-list-item[ng-reflect-router-link] {
+  cursor: pointer;
+}
+
+mat-sidenav {
+  width: 250px;
+}

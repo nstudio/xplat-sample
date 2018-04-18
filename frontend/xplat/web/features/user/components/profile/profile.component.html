@@ -1,0 +1,49 @@
+<div *ngIf="!editProfile">
+  <div *ngIf="profile; else loading">
+    <mat-card>
+      <div class="m-b-10">
+        <img *ngIf="profile.profileImageUrl" [src]="profile.profileImageUrl" class="profile-img" />
+        <button (click)="editProfile = profile" mat-button style="float:right;">{{'general.edit' | translate}}</button>
+      </div>
+      <h1>{{profile.displayName}}</h1>
+      <h4>{{profile.email}}</h4>
+      <a *ngIf="profile.twitterHandle" [attr.href]="'https://twitter.com/' + profile.twitterHandle" target="_blank" class="c-sky">@{{profile.twitterHandle}}</a>
+      <div  *ngIf="totalCoins" class="p-5 text-right">
+        <span class="p-r-5" style="position:relative;top:-12px;">Your Coins:</span>
+        <span class="p-r-5 font-weight-bold" style="position:relative;top:-12px;">{{totalCoins}}</span>
+        <img src="assets/images/coin.png" height="35"/>
+      </div>
+      <div class="m-t-20">
+        <button (click)="userService.logout()" mat-raised-button>{{'user.logout' | translate}}</button>
+      </div>
+    </mat-card>
+  </div>
+  <ng-template #loading>
+    <div class="p-10">
+      loading...
+    </div>
+  </ng-template>
+</div>
+<div *ngIf="editProfile">
+  <mat-card>
+    <div class="form-container">
+      <mat-checkbox [(ngModel)]="editProfile.isAdmin">Admin</mat-checkbox>
+
+      <mat-form-field class="m-t-20">
+        <input matInput placeholder="Name" [(ngModel)]="editProfile.displayName"/>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Email" [(ngModel)]="editProfile.email" disabled/>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Twitter handle" [(ngModel)]="editProfile.twitterHandle"/>
+      </mat-form-field>
+    </div>
+    <div class="m-t-20">
+      <button (click)="editProfile = null" mat-button>{{'dialogs.cancel' | translate}}</button>
+      <button (click)="update(editProfile)" mat-raised-button>{{'general.update' | translate}}</button>
+    </div>
+  </mat-card>
+</div>

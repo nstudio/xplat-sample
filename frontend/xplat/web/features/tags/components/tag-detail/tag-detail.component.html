@@ -1,0 +1,34 @@
+<div *ngIf="selected; else loading" sp-route-vcref class="p-x-20">
+    <div *ngIf="!selectedGathering">
+        <!-- <h2>{{selected.id + '. '}}</h2> -->
+        <h1>{{selected.name}}</h1>
+        <p>{{selected.description}}</p>
+        <div>
+            <mat-icon matListIcon>arrow_forward</mat-icon>
+            <a [href]="selected.link" target="_blank" style="position: relative;top: -5px;">Website</a>
+        </div>
+        <mat-form-field class="w-full">
+            <input matInput 
+                #search 
+                type="search" 
+                placeholder="Search" 
+                (keyup)="search$.next(search.value)" 
+                (search)="search$.next(search.value)">
+        </mat-form-field>
+
+        <mat-nav-list>
+            <mat-list-item *ngFor="let gathering of gatherings" [routerLink]="[homePath, selected.slug, gathering.slug]"
+                routerLinkActive="mat-active">
+                <mat-icon matListIcon>tv</mat-icon>
+                <h4 matLine style="font-size: 20px; margin-bottom:5px;">{{gathering.name}}</h4>
+                <h6 matLine style="color: #999;">{{gathering.description}}</h6>
+            </mat-list-item>
+        </mat-nav-list>
+    </div>
+</div>
+<ng-template #loading>
+    <div class="p-10">
+        loading...
+    </div>
+</ng-template>
+<router-outlet></router-outlet>

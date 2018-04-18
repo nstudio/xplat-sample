@@ -1,0 +1,10 @@
+.top-heading {
+  font-size:15;
+  color: $grey;
+  padding: 10;
+
+  &.tablet {
+    padding: 35;
+    font-size: 30;
+  }
+}

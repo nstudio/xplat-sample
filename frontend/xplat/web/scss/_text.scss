@@ -1,0 +1,25 @@
+/**
+ * Font size
+ * The following creates this pattern:
+ * .t-10{font-size:10px}
+ * From 10, 12, 14, 15, 16, 17, 18, 19, 20
+**/
+@each $size, $sizes in $font-sizes {
+  $s: map-get($sizes, size);
+
+  .t-#{$size} {
+    font-size: #{$s}px;
+  }
+}
+
+.description {
+  font-size:14px;
+  color: $grey-light;
+  display: inline;
+}
+
+.readmore {
+  display: inline-block;
+  font-size: 12px;
+  cursor: pointer;
+}

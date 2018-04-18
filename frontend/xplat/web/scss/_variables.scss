@@ -1,0 +1,12 @@
+// shared theme
+// @import '~@sketchpoints/scss/theme';
+
+// shared common
+@import '~@sketchpoints/scss/common';
+
+// web theme
+@include mat-core();
+
+
+// web theme customizations
+@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';

@@ -1,0 +1,49 @@
+<GridLayout rows="auto,auto,*,auto,auto" columns="*" class="artist-view" sp-route-vcref>
+  <GridLayout row="0" col="0" rows="85" columns="*,auto,auto" class="c-bg-grey-light">
+    <ScrollView orientation="horizontal" row="0" col="0" colSpan="2">
+      <StackLayout orientation="horizontal" class="p-5">
+        <Image [src]="page.url" *ngFor="let page of (pageBrowser$ | async); let i = index;" height="75" width="75" class="page-img" (tap)="viewPage(i)" [class.active]="page.selected"></Image>
+        <Image id="blank-page" src="~/assets/images/page.png" height="75" width="75" (tap)="viewCurrentPage()"></Image>
+      </StackLayout>
+    </ScrollView>
+    <Button id="add-page" row="0" col="1" [text]="'ion-ios-plus' | fonticon" (tap)="addPage()" class="ion c-black"></Button>
+    
+    <GridLayout row="0" col="2" rows="auto" columns="auto,10,auto,10,auto" class="p-x-10 stream-area" [class.active]="streaming">
+      <Label id="stream-time" row="0" col="0" [text]="frameService.activeTimecode$ | async" class="text-right t-12 label" verticalAlignment="center"></Label>
+      <Button id="toggle-stream" row="0" col="2" [text]="'ion-ios-pulse-strong' | fonticon" class="ion" (tap)="unlock()" [class.active]="streaming" verticalAlignment="center"></Button>
+      <Button id="mark-done" [text]="'ion-android-cloud-done' | fonticon" class="ion done" row="0" col="4" (tap)="markDone()" (longPress)="resetAll()" [class.active]="activeSketch?.gifUrl"></Button>  
+    </GridLayout>
+  </GridLayout>
+  <GridLayout row="1" col="0" rows="auto" columns="auto,10,auto,10,auto,10,auto,10,auto,*,auto,10,auto" class="p-y-2 p-x-10 c-bg-grey toolbar">
+    <Button id="bg-change" [text]="'ion-image' | fonticon" class="ion t-10" row="0" col="0" (tap)="selectBackground()"></Button> 
+    <Button id="clear" [text]="'ion-ios-minus-outline' | fonticon" class="ion t-12" row="0" col="2" (tap)="clear()"></Button>
+    <Button id="eraser" [text]="(artist.eraser ? 'ion-ios-circle-filled' : 'ion-ios-circle-outline') | fonticon" class="ion t-10" [class.active]="artist.eraser" row="0" col="4" (tap)="toggleEraseTool()"></Button>
+    <Button id="undo" [text]="'ion-ios-undo-outline' | fonticon" class="ion t-10" row="0" col="6" (tap)="artist.undo()"></Button>
+    <Button id="redo" [text]="'ion-ios-redo-outline' | fonticon" class="ion t-10" row="0" col="8" (tap)="artist.redo()"></Button>
+
+    <Button id="share" [text]="'ion-ios-upload-outline' | fonticon" class="ion t-10" row="0" col="12" (tap)="share()"></Button>  
+  </GridLayout>
+  <StackLayout row="2" col="0" backgroundColor="#fff">
+      <Label text="Drawing plugin here..." class="t-25 c-black text-center" verticalAlignment="center" horizontalAlignment="center"></Label>
+  </StackLayout>
+
+  <GridLayout row="3" col="0" rows="27" columns="*,10,auto" class="c-bg-grey-light p-2">
+    <ScrollView orientation="horizontal" row="0" col="0">
+      <StackLayout orientation="horizontal">
+        <StackLayout [backgroundColor]="color" class="color-swatch m-r-5 reuse" (tap)="reuseColor(color)" *ngFor="let color of (artist.usedColors$ | async); let i = index;" (longPress)="confirmColorRemove(color)"></StackLayout>
+      </StackLayout>
+    </ScrollView>
+  </GridLayout>
+
+  <GridLayout row="4" col="0" rows="auto" columns="25,8,auto,8,auto,8,auto,8,auto,*,150,35" class="p-10 c-bg-grey toolbar">
+    <StackLayout id="color-swatch" row="0" col="0" [backgroundColor]="artist.penColor$ | async" class="color-swatch" (tap)="selectColor()"></StackLayout>
+    <Button id="pen" row="0" col="2" [text]="'ion-edit' | fonticon" (tap)="artist.currentTool = 'pen'" class="ion" [class.active]="artist.currentTool == 'pen'"></Button>
+    <Button id="arrow" row="0" col="4" [text]="'ion-ios-arrow-thin-right' | fonticon" (tap)="artist.currentTool = 'arrow'" class="ion" [class.active]="artist.currentTool == 'arrow'"></Button>   
+    <Button id="line" row="0" col="6" [text]="'ion-minus' | fonticon" (tap)="artist.currentTool = 'line'" class="ion" [class.active]="artist.currentTool == 'line'"></Button>   
+    <Button id="text" row="0" col="8" [text]="'ion-ios-compose-outline' | fonticon" (tap)="artist.currentTool = 'text'" class="ion" [class.active]="artist.currentTool == 'text'"></Button> 
+    
+    <Slider id="penwidth" #slider row="0" col="10" minValue="1" maxValue="40" value="2" class="slider" verticalAlignment="center"></Slider>
+    <Label row="0" col="11" [text]="artist.penWidth$ | async" class="t-12 label"></Label>
+    
+  </GridLayout>
+</GridLayout>

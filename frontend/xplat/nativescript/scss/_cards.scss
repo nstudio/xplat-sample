@@ -1,0 +1,36 @@
+.card{
+  margin-top: 10;
+  margin-left: 10;
+  margin-right: 10;
+  padding:10;
+  vertical-align:top;
+  background-color: $grey-dark;
+  // border-width: 1;
+  // border-radius: 2;
+  // border-color: $grey;
+
+  .list-group-item-heading {
+    font-size: 20;
+  }
+
+  .list-group-item-text {
+    font-size: 14;
+  }
+}
+
+.list-group {
+  .card {
+    &.tablet {
+      padding:20;
+  
+      .list-group-item-heading {
+        font-size: 30;
+        font-weight: bold;
+      }
+    
+      .list-group-item-text {
+        font-size: 16;
+      }
+    }
+  }
+}

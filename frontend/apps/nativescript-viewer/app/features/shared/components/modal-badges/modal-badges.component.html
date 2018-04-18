@@ -1,0 +1,45 @@
+<GridLayout rows="auto,*" columns="*" class="page">
+  <sp-modal-title-bar [title]="title" [params]="params" row="0" col="0"></sp-modal-title-bar>
+  <GridLayout row="1" col="0" rows="auto,auto,auto,*,20" columns="*" (loaded)="loaded()" class="p-t-10">
+    <Label row="0" col="0" text="Give this sketch a badge!" textWrap="true" class="h2 text-center"></Label>
+    <GridLayout row="1" col="1" rows="auto" columns="*,10,auto,10,auto" class="p-5">
+      <Label row="0" col="0" text="Your Coins:" class="h3 text-right"></Label>
+      <Label row="0" col="2" [text]="userData?.coins" class="h2 font-weight-bold text-right"></Label>
+      <Image row="0" col="4" src="~/assets/images/coin.png" class="coin" height="35" horizontalAlignment="center" verticalAlignment="top"></Image>
+    </GridLayout>
+    <GridLayout row="2" col="1" rows="auto" columns="*,80,8,80,8,80,8,80,*" class="p-t-5 p-b-10 coin-area">
+      <StackLayout row="0" col="1" *ngIf="(coinsp$ | async); let coinsp;">
+        <Image [src]="coinsp.icon" class="coin" height="45" horizontalAlignment="center" verticalAlignment="center" (tap)="coinsp.btnAction(coinsp)"></Image>
+        <Label [text]="coinsp.name" class="h3 c-white text-center"></Label>
+        <Button [text]="coinsp.btn" (tap)="coinsp.btnAction(coinsp)" class="btn-outline btn-rounded-sm"></Button>
+      </StackLayout>
+      <StackLayout row="0" col="3" *ngIf="(coinspgold$ | async); let coinspgold;">
+        <Image [src]="coinspgold.icon" class="coin" height="45" horizontalAlignment="center" verticalAlignment="center" (tap)="coinspgold.btnAction(coinspgold)"></Image>
+        <Label [text]="coinspgold.name" class="h3 c-white text-center"></Label>
+        <Button [text]="coinspgold.btn" (tap)="coinspgold.btnAction(coinspgold)" class="btn-outline btn-rounded-sm"></Button>
+      </StackLayout>
+      <StackLayout row="0" col="5" *ngIf="(coinspplus$ | async); let coinspplus;">
+        <Image [src]="coinspplus.icon" class="coin" height="45" horizontalAlignment="center" verticalAlignment="center" (tap)="coinspplus.btnAction(coinspplus)"></Image>
+        <Label [text]="coinspplus.name" class="h3 c-white text-center"></Label>
+        <Button [text]="coinspplus.btn" (tap)="coinspplus.btnAction(coinspplus)" class="btn-outline btn-rounded-sm"></Button>
+      </StackLayout>
+      <StackLayout row="0" col="7" *ngIf="(coinspplatinum$ | async); let coinspplatinum;">
+        <Image [src]="coinspplatinum.icon" class="coin" height="45" horizontalAlignment="center" verticalAlignment="center" (tap)="coinspplatinum.btnAction(coinspplatinum)"></Image>
+        <Label [text]="coinspplatinum.name" class="h3 c-white text-center"></Label>
+        <Button [text]="coinspplatinum.btn" (tap)="coinspplatinum.btnAction(coinspplatinum)" class="btn-outline btn-rounded-sm"></Button>
+      </StackLayout>
+    </GridLayout>
+    <RadListView id="badge-list" row="3" col="0" [items]="badges" class="h-full c-bg-white" separatorColor="transparent" (itemLoading)="appService.disableRowColor($event)">
+      <ng-template tkListItemTemplate let-badge="item" let-i="index">
+        <StackLayout [class.tablet]="appService.deviceType === 'Tablet'" (tap)="badge.btnAction(badge)">
+          <sp-badge [badge]="badge"></sp-badge>
+          <!-- <FavBtn [src]="badge.icon" [selectedColor]="badge.color" width="88" height="88" [reinit]="reinit"></FavBtn>
+          <Label [text]="badge.name" class="t-20 c-grey-dark text-center"></Label>
+          <Button [text]="badge.btn" (tap)="badge.btnAction(badge)" class="btn btn-primary btn-grey btn-rounded-sm"></Button> -->
+        </StackLayout>
+      </ng-template>
+      <ListViewGridLayout tkListViewLayout itemHeight="155" spanCount="3">
+      </ListViewGridLayout>
+    </RadListView>
+  </GridLayout>
+</GridLayout>

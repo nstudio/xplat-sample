@@ -1,0 +1,31 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "collection of npm scripts for the backend",
+  "scripts": {
+    "build": "cd functions && npm run build || true",
+    "start" : "cd functions && npm start || true",
+    "test": "cd functions && npm test || true",
+    "exportdata": "cd functions && npm run exportdata",
+    "deploy.api.main": "./node_modules/.bin/json -I -f functions/package.json -e 'this.main=\"lib/src/api.function.js\"' || true",
+    "deploy.job.main": "./node_modules/.bin/json -I -f functions/package.json -e 'this.main=\"lib/src/job.function.js\"' || true",
+    "deploy.api.json": "rm -rf firebase.json && cp firebase.api.json firebase.json || true",
+    "deploy.job.json": "rm -rf firebase.json && cp firebase.job.json firebase.json || true",
+    "deploy.api.setup" : "npm run deploy.api.main && npm run deploy.api.json || true",
+    "deploy.job.setup" : "npm run deploy.job.main && npm run deploy.job.json || true",
+    "deploy.api.dev": "npm run deploy.api.setup && firebase use api-dev && firebase functions:config:set sp.env=\"remotedev\" && firebase deploy || true",
+    "deploy.job.dev": "npm run deploy.job.setup && firebase use job-dev && firebase functions:config:set sp.env=\"removedev\" && firebase deploy || true",
+    "deploy.api.prod": "npm run deploy.api.setup && firebase use api-prod && firebase functions:config:set sp.env=\"production\" && firebase deploy || true",
+    "deploy.job.prod": "npm run deploy.job.setup && firebase use job-prod && firebase functions:config:set sp.env=\"production\" && firebase deploy || true",
+    "logs.api.dev": "npm run deploy.api.setup && firebase use api-dev && firebase functions:log || true",
+    "logs.job.dev": "npm run deploy.job.setup && firebase use job-dev && firebase functions:log || true",
+    "logs.api.prod": "npm run deploy.api.setup && firebase use api-prod && firebase functions:log || true",
+    "logs.job.prod": "npm run deploy.job.setup && firebase use job-prod && firebase functions:log || true"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "json": "^9.0.6"
+  },
+  "repository": "https://github.com/nstudio/xplat-sample"
+}

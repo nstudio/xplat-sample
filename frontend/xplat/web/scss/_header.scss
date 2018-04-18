@@ -1,0 +1,16 @@
+.main-header {
+  .logo-title {
+    color: $white;
+    text-decoration: none;
+  }
+  .logo-img {
+    height: 50px;
+    cursor: pointer;
+  }
+
+  .username {
+    text-decoration: none;
+    color: $white;
+    font-size: 12px;
+  }
+}

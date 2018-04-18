@@ -1,0 +1,25 @@
+<mat-toolbar color="primary" class="main-header">
+  <button mat-icon-button *ngIf="isMobile" (click)="toggleSidenav()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <img class="logo-img" src="assets/images/logo-drawer.png" [routerLink]="['/']"/>
+  <a *ngIf="!isMobile" [routerLink]="['/']" class="logo-title">{{title}}</a>
+  <span class="fill-remaining-space"></span>
+  <a *ngIf="userService.current" [routerLink]="[homePath, 'profile', userService.current.username]" class="username">{{userService.current.email}}</a>
+
+  <mat-menu #appMenu="matMenu">
+    <div *ngIf="userService.current">
+      <mat-divider></mat-divider>
+      <button mat-menu-item [routerLink]="[homePath, 'profile', userService.current.username]">Settings</button>
+      <button mat-menu-item (click)="userService.logout()">Logout</button>
+    </div>
+    <div *ngIf="!userService.current">
+        <mat-divider></mat-divider>
+        <button mat-menu-item (click)="login()">Login</button>
+      </div>
+  </mat-menu>
+
+  <button mat-icon-button [matMenuTriggerFor]="appMenu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+</mat-toolbar>

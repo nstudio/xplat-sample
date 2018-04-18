@@ -1,0 +1,382 @@
+.sketch-area {
+    position: relative;
+    .sketch-image {
+        @include unselectable;
+        pointer-events: none;
+    }
+    .artist-link {
+        text-align: center;
+        margin: 0 auto;
+        display: inline-block;
+        margin: 10px 0 0 0;
+    }
+    .play-btn {
+        position: absolute;
+        bottom: -15px;
+        left: -12px;
+        padding: 2px 10px;
+        background: white;
+        border-radius: 22px;
+        border: 1px solid #ccc;
+        cursor: pointer;
+        .ion {
+            color: $sp-primary;
+            left: 2px;
+            position: relative;
+            &.ion-ios-refresh-outline {
+                left: 0px;
+            }
+        }
+    }
+    .tip-area {
+        position: absolute;
+        bottom: 100px;
+        padding: 10px;
+        width: 100%;
+        color: white;
+        background-color: rgba(48, 48, 48, .9);
+        .tip {
+            margin: 10px 0 0 0;
+        }
+    }
+    .love-area {
+        padding: 10px;
+        position: absolute;
+        @include unselectable;
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        li {
+            display: inline-block;
+            margin: 0 10px 10px 10px;
+        }
+        .love {
+            height: 44px;
+            width: 44px;
+            position: relative;
+            border-radius: 34px;
+            padding: 8px;
+            .change {
+                position: absolute;
+                left: 300px;
+                top: -32px;
+                color: rgba(255, 255, 255, .6);
+                background: #303030;
+                padding: 2px 5px 2px 5px;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                cursor: pointer;
+                width: 110px;
+                text-align: center;
+            }
+            img {
+                width: 44px;
+                height: 44px;
+                opacity: .7;
+            }
+            span {
+                position: absolute;
+                top: 0px;
+                left: 42px;
+                font-size: 12px;
+                text-shadow: 0px 0px 1px rgba(0, 0, 0, 1);
+                color: white;
+                border-radius: 10px;
+                padding: 1px 4px;
+                font-weight: bold;
+            } // &:before {
+            //     content: "";
+            //     display: block;
+            //     position: absolute;
+            //     top: 0;
+            //     bottom: 0;
+            //     left: 0;
+            //     right: 0;
+            //     background: rgba(0, 255, 255, 0.5);
+            //     transition: all .3s linear;
+            // }
+            // &:hover:before {
+            //   background:none;
+            // }
+        }
+    }
+}
+
+.mat-dialog-container {
+    padding: 0px !important;
+}
+
+.badge-modal {
+    .mat-grid-tile {
+        height: 125px !important;
+        .mat-figure {
+            display: block !important;
+            text-align: center;
+        }
+    }
+    .coin-area {
+        overflow: auto;
+        overflow-x: hidden;
+    }
+    .coin-total {
+        span {
+            position: relative;
+            top: -12px;
+            margin-right: 5px;
+        }
+    }
+    .coin {
+        float: left;
+        width: 90px;
+        img {
+            display: block;
+            margin: 10px auto;
+        }
+        span {
+            display: block;
+            text-align: center;
+            margin: 0 0 5px 0;
+        }
+    }
+    .badge-list {
+        overflow-y: auto;
+        max-height: 300px;
+        max-width: 368px;
+        .badge-tile {
+            display: inline-block;
+            text-align: center;
+            margin: 0 10px 14px 18px;
+            .label {
+                margin: 0 0 5px 0;
+            }
+            .badge {
+                height: 44px;
+                width: 44px;
+                position: relative;
+                border-radius: 34px;
+                padding: 8px;
+                margin: 0 auto 5px;
+                .icon {
+                    width: 44px;
+                    height: 44px;
+                    opacity: .7;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .sketch-area {
+        .love-area {
+            .love {
+                .change {
+                    left: 248px;
+                }
+            }
+        }
+        .artist-link {
+            display: block;
+        }
+    }
+    .sketch-viewer {
+        padding:5px !important;
+        
+        h1 {
+            font-size: 15px;
+            text-align: center;
+        }
+        .description {
+            display: none;
+        }
+        .readmore {
+            display:none;
+        }
+        .sketch-area {
+            .sketch-image {
+                max-width: 404px;
+                max-height: 460px;
+            }
+            .play-btn {
+                left: -3px;
+            }
+        }
+
+    }
+
+    .badge-modal {
+        h3 {
+            font-size: 15px;
+        }
+        .mat-grid-tile {
+            height: 125px !important;
+        }
+        .coin-area {
+            padding:0 0 12px 0;
+
+            .coin {
+                font-size: 12px;
+                 width: 80px;
+
+                 img {
+                     height: 40px;
+                 }
+
+                 .mat-button {
+                    font-size: 12px;
+                    padding: 4px 0 0 0;
+                    line-height: 22px;
+                    min-width: 70px;
+                 }
+            }
+        }
+        .coin-total {
+            span {
+                top: -12px;
+                margin-right: 5px;
+            }
+        }
+        .coin {
+            width: 90px;
+            img {
+                margin: 10px auto;
+            }
+            span {
+                margin: 0 0 5px 0;
+            }
+        }
+        .badge-list {
+            max-height: 300px;
+            max-width: 368px;
+            .badge-tile {
+                margin: 0 10px 12px 10px;
+                .label {
+                    margin: 0 0 5px 0;
+                }
+                .badge {
+                    height: 44px;
+                    width: 44px;
+                    border-radius: 34px;
+                    padding: 8px;
+                    margin: 0 auto 5px;
+                    .icon {
+                        width: 44px;
+                        height: 44px;
+                        opacity: .7;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// iPhone X
+@media screen and (max-width: 375px) {
+    .cdk-overlay-pane {
+        max-width: 90vw !important;
+    }
+    .sketch-area {
+        .love-area {
+            .love {
+                .change {
+                    left: 230px;
+                }
+            }
+        }
+        .artist-link {
+            display: block;
+        }
+    }
+    .sketch-viewer {
+        padding:5px !important;
+        
+        h1 {
+            font-size: 15px;
+            text-align: center;
+        }
+        .description {
+            display: none;
+        }
+        .readmore {
+            display:none;
+        }
+        .sketch-area {
+            .sketch-image {
+                max-width: 365px;
+                max-height: 460px;
+            }
+            .play-btn {
+                left: -3px;
+            }
+        }
+
+    }
+
+    .badge-modal {
+        h3 {
+            font-size: 15px;
+        }
+        .mat-grid-tile {
+            height: 125px !important;
+        }
+        .coin-area {
+            padding:0 0 12px 0;
+
+            .coin {
+                font-size: 12px;
+                 width: 80px;
+
+                 img {
+                     height: 40px;
+                 }
+
+                 .mat-button {
+                    font-size: 12px;
+                    padding: 4px 0 0 0;
+                    line-height: 22px;
+                    min-width: 70px;
+                 }
+            }
+        }
+        .coin-total {
+            span {
+                top: -12px;
+                margin-right: 5px;
+            }
+        }
+        .coin {
+            width: 90px;
+            img {
+                margin: 10px auto;
+            }
+            span {
+                margin: 0 0 5px 0;
+            }
+        }
+        .badge-list {
+            max-height: 300px;
+            max-width: 368px;
+            .badge-tile {
+                margin: 0 10px 12px 10px;
+                .label {
+                    margin: 0 0 5px 0;
+                }
+                .badge {
+                    height: 44px;
+                    width: 44px;
+                    border-radius: 34px;
+                    padding: 8px;
+                    margin: 0 auto 5px;
+                    .icon {
+                        width: 44px;
+                        height: 44px;
+                        opacity: .7;
+                    }
+                }
+            }
+        }
+    }
+}

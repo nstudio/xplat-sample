@@ -1,0 +1,38 @@
+type Gathering {
+  id: String
+  name: String
+  slug: String
+  description: String
+  timeStart: String
+  timeEnd: String
+  timeSpanMinutes: Int
+  tags: [String]
+  createDate: String
+}
+
+input GatheringInput {
+  id: String
+  name: String
+  slug: String
+  description: String
+  timeStart: String
+  timeEnd: String
+  timeSpanMinutes: Int
+  tags: [String]
+  createDate: String
+}
+
+input GatheringQueryParams {
+  match: GatheringInput
+  limit: Int
+}
+
+type Query {
+  getGathering(params: GatheringQueryParams): Gathering
+  getGatherings(params: GatheringQueryParams): [Gathering]
+}
+
+type Mutation {
+  createGathering(gathering: GatheringInput): Gathering
+  updateGathering(gatheringId: String, gatheringUpdates: GatheringInput): Gathering
+}

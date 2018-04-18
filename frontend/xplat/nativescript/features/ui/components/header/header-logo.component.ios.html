@@ -1,0 +1,11 @@
+<ActionBar class="action-bar">
+  <GridLayout horizontalAlignment="center" verticalAlignment="center" padding="2" rows="*" columns="50,*,50">
+    <Image [src]="logo" class="action-image" horizontalAlignment="center" verticalAlignment="center" row="0" col="1"></Image>
+  </GridLayout>
+  <ActionItem (tap)="toggleDrawer()">
+    <Button [text]="'ion-navicon' | fonticon" class="ion action-item"></Button>
+  </ActionItem>
+  <ActionItem (tap)="tappedRight.next(true)" ios.position="right" *ngIf="rightButton">
+    <Button [text]="rightButton" class="action-item ion"></Button>
+  </ActionItem>
+</ActionBar>

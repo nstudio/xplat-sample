@@ -1,0 +1,16 @@
+<mat-nav-list>
+  <mat-list-item [routerLink]="[homePath]" routerLinkActive="mat-active" [routerLinkActiveOptions]="{exact: true}" class="browse">
+    <mat-icon matListIcon>featured_play_list</mat-icon>
+    <!-- <h3 matLine>{{'menu.home' | translate}}</h3> -->
+    <h3 matLine>Browse...</h3>
+  </mat-list-item>
+  <mat-list-item [routerLink]="[homePath, selectedTag.slug]" routerLinkActive="mat-active" [routerLinkActiveOptions]="{exact: true}" *ngIf="selectedTag" class="selected-tag" [class.is-parent]="activeUrl && activeUrl.indexOf(homePath + selectedTag.slug) > -1">
+    <mat-icon matListIcon>featured_video</mat-icon>
+    <h3 matLine>{{selectedTag.name}}</h3>
+  </mat-list-item>
+  <mat-list-item *ngFor="let gathering of gatherings" [routerLink]="[homePath, selectedTag.slug, gathering.slug]" routerLinkActive="mat-active" class="side-gathering">
+    <mat-icon matListIcon>tv</mat-icon>
+    <h4 matLine>{{gathering.name}}</h4>
+    <!-- <h6 matLine>{{gathering.speaker}}</h6> -->
+  </mat-list-item>
+</mat-nav-list>

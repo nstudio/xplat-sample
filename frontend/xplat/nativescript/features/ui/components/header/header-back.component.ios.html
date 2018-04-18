@@ -1,0 +1,26 @@
+<ActionBar
+  class="action-bar"
+  [title]="title">
+  <NavigationButton
+    [text]="'general.back' | translate"
+    [visibility]="backGuard  ? 'collapsed' : 'visible'">
+  </NavigationButton>
+  <ActionItem
+  [text]="'general.back' | translate"
+    ios.position="left"
+    (tap)="back()"
+    class="action-item"
+    *ngIf="backGuard">
+  </ActionItem>
+  <ActionItem
+    [text]="rightButton"
+    (tap)="tappedRight.next(true)"
+    ios.position="right"
+    class="action-item"
+    *ngIf="rightButton">
+    <!-- <Button
+      [text]="rightButtonLabel"
+      class="action-item text-right">
+    </Button> -->
+  </ActionItem>
+</ActionBar>

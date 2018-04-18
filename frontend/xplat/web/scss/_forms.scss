@@ -1,0 +1,14 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container > * {
+  width: 100%;
+}
+
+.profile-img {
+  display:inline;
+  max-height:100px;
+  // margin-bottom:10px;
+}

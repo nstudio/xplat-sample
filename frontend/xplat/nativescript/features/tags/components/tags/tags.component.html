@@ -1,0 +1,29 @@
+<sp-header-logo [logo]="'~/assets/images/logo-top.png'"></sp-header-logo>
+<StackLayout class="page" sp-route-vcref>
+    <SearchBar id="search" #search hint="Search" text="" (clear)="clear($event)" (textChange)="search$.next(search.text)" (loaded)="doNotShowAndroidKeyboard($event)" android:height="40"></SearchBar>
+    <RadListView *ngIf="tags && (tags.length || search.text); else loading" 
+        [items]="tags" class="list-group h-full" 
+        separatorColor="transparent" 
+        (loaded)="listviewLoaded($event)"
+        (itemLoading)="appService.disableRowColor($event)"
+        pullToRefresh="true" 
+        (pullToRefreshInitiated)="onPullRefreshInitiated($event)">
+        <ng-template tkListItemTemplate let-tag="item" let-i="index">
+            <StackLayout [id]="'item-'+i" orientation="horizontal" class="card" [nsRouterLink]="[homePath, tag.slug]" [class.tablet]="appService.deviceType === 'Tablet'">
+                <Image [src]="tag.logoUrl" class="list-image" stretch="aspectFit" width="60"></Image>   
+                <StackLayout class="m-l-10">
+                    <Label [text]="tag.name" class="list-group-item-heading c-white"></Label>
+                    <Label [text]="tag.description" class="list-group-item-text"></Label>
+                </StackLayout>
+            </StackLayout>
+        </ng-template>
+        <ListViewGridLayout
+            tkListViewLayout
+            [itemHeight]="appService.deviceType === 'Phone' ? 75 : 115"
+            [spanCount]="appService.deviceType === 'Phone' ? 1 : 2">
+        </ListViewGridLayout>
+    </RadListView>
+    <ng-template #loading>
+        <ActivityIndicator busy="true" width="100" height="100" color="white" class="activity-indicator"></ActivityIndicator>
+    </ng-template>
+</StackLayout>

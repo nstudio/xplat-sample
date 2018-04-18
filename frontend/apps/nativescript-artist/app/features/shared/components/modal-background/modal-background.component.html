@@ -1,0 +1,18 @@
+<GridLayout rows="auto,auto,auto,*" columns="*" class="c-bg-black">
+  <sp-modal-title-bar [title]="title" [params]="params" row="0" col="0"></sp-modal-title-bar>
+  <Button row="1" col="0" text="Clear" (tap)="close('clear')" class="btn"></Button>
+  <GridLayout row="2" col="0" rows="auto" columns="*,5,auto" class="form p-l-10">
+    <TextField #input row="0" col="0" hint="Url to an image..." class="input input-border m-y-5" backgroundColor="white"></TextField>
+    <Button row="0" col="2" text="Load" (tap)="close(input.text)" class="btn btn-primary"></Button>
+  </GridLayout>
+  <ListView row="3" col="0" [items]="backgrounds" class="list-group h-full" separatorColor="transparent" (loaded)="loaded()">
+      <ng-template let-background="item">
+        <StackLayout orientation="horizontal" class="card" (tap)="select(background)">
+          <Image class="bg-image-thumb" [src]="background.img" width="100" height="120"></Image>
+          <StackLayout class="m-l-10" verticalAlignment="center">
+              <Label [text]="background.name" class="list-group-item-heading c-white"></Label>
+          </StackLayout>
+        </StackLayout>
+      </ng-template>
+  </ListView>
+</GridLayout>
